@@ -39,9 +39,19 @@
     border-radius:12px;padding:17px 44px;font-size:17px;font-weight:700;letter-spacing:.06em;
     cursor:pointer;box-shadow:0 8px 24px rgba(140,108,52,.4);text-decoration:none;
     display:inline-flex;align-items:center;gap:9px}
-  .tip{font-size:12.5px;color:#cdbb98;line-height:1.85;max-width:340px;margin-top:4px;
-    background:rgba(176,141,79,.12);border:1px solid rgba(176,141,79,.3);border-radius:12px;padding:13px 16px}
-  .tip b{color:#f3e9d6}
+  .tip{font-size:12.5px;color:#cdbb98;line-height:1.75;max-width:360px;margin-top:6px;text-align:left;
+    background:rgba(176,141,79,.1);border:1px solid rgba(176,141,79,.28);border-radius:14px;padding:15px 17px}
+  .tip b{color:#f3e9d6;font-weight:600}
+  .tip-h{display:flex;align-items:center;gap:9px;color:#f3e9d6;font-weight:700;font-size:13.5px;
+    letter-spacing:.02em;margin-bottom:9px}
+  .tip-h svg{width:19px;height:19px;color:#d9b878;flex:0 0 auto}
+  .tip p{margin:0 0 7px}
+  .tip p:last-child{margin-bottom:0}
+  .tip .step{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+    border-radius:50%;background:#b08d4f;color:#1c140e;font-size:11px;font-weight:800;margin-right:7px}
+  .tip .kbd{display:inline-block;min-width:20px;text-align:center;padding:1px 6px;margin:0 2px;
+    border:1px solid rgba(243,233,214,.38);border-radius:6px;background:rgba(243,233,214,.08);
+    color:#f3e9d6;font-weight:700;line-height:1.4}
   .spin{width:18px;height:18px;border:2px solid rgba(243,233,214,.4);border-top-color:#f3e9d6;
     border-radius:50%;animation:sp .8s linear infinite;display:inline-block}
   @keyframes sp{to{transform:rotate(360deg)}}
@@ -60,8 +70,13 @@
   <!-- ブラウザで開いた時用（自動転送しない＝落ち着いてホーム追加できる） -->
   <a class="open hidden" id="openBtn" href="#">理事会ポータルを開く ➜</a>
   <div class="tip hidden" id="tip">
-    📲 この画面を<b>ホーム画面に追加</b>すると、<b>マンションのアイコン</b>でいつでも開けます。<br>
-    ブラウザの<b>メニュー（⋮）</b>→「<b>ホーム画面に追加 / インストール</b>」を選んでください。
+    <div class="tip-h">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="3"/><path d="M12 8.5v6M9 11.5h6"/></svg>
+      ホーム画面に追加すると便利です
+    </div>
+    <p>マンションのアイコンから、<b>ワンタップ</b>でいつでも開けます。</p>
+    <p><span class="step">1</span>ブラウザのメニュー <span class="kbd">⋮</span> を開く</p>
+    <p><span class="step">2</span>「<b>ホーム画面に追加</b>」（または「インストール」）を選ぶ</p>
   </div>
 
 <script>
