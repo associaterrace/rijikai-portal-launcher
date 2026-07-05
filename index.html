@@ -26,24 +26,33 @@
   html,body{height:100%}
   body{margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
     min-height:100dvh;gap:16px;text-align:center;
-    background:radial-gradient(120% 120% at 50% 18%,#3d2e20,#1c140e 70%);
+    background:radial-gradient(135% 115% at 50% 8%,#463320,#19110a 74%);
     color:#f3e9d6;font-family:'Hiragino Kaku Gothic ProN',Meiryo,system-ui,sans-serif;
-    padding:26px 24px}
-  img.logo{width:122px;height:122px;border-radius:26px;box-shadow:0 14px 40px rgba(0,0,0,.55);
-    border:1px solid rgba(176,141,79,.5)}
-  .eyebrow{font-size:11px;letter-spacing:.24em;color:#b08d4f}
-  h1{margin:0;font-size:22px;font-weight:600;letter-spacing:.08em;
+    padding:52px 26px}
+  #landing{display:flex;flex-direction:column;align-items:center;width:100%;
+    animation:fadeUp .7s cubic-bezier(.2,.7,.2,1) both}
+  img.logo{width:112px;height:112px;border-radius:28px;
+    box-shadow:0 20px 54px rgba(0,0,0,.5),0 0 0 1px rgba(176,141,79,.32),0 0 52px rgba(176,141,79,.20);
+    animation:float 6.5s ease-in-out infinite}
+  .eyebrow{font-size:10.5px;letter-spacing:.36em;color:#c8a05a;font-weight:600;
+    margin-top:34px;padding-left:.36em}
+  h1{margin:15px 0 0;font-size:26px;font-weight:600;letter-spacing:.13em;color:#f7efdd;
     font-family:'Yu Mincho','Shippori Mincho',serif}
-  .org{font-size:12px;color:#b08d4f;letter-spacing:.04em}
-  .open{margin-top:8px;background:linear-gradient(135deg,#b08d4f,#8c6c34);color:#fff;border:0;
-    border-radius:12px;padding:17px 44px;font-size:17px;font-weight:700;letter-spacing:.06em;
-    cursor:pointer;box-shadow:0 8px 24px rgba(140,108,52,.4);text-decoration:none;
-    display:inline-flex;align-items:center;gap:9px}
-  .tip{font-size:12.5px;color:#cdbb98;line-height:1.6;max-width:360px;margin-top:6px;text-align:left;
-    background:rgba(176,141,79,.1);border:1px solid rgba(176,141,79,.28);border-radius:14px;padding:16px 18px}
-  .tip b{color:#f3e9d6;font-weight:600}
+  .org{font-size:12.5px;color:#bd9a5b;letter-spacing:.07em;margin-top:13px}
+  .open{margin-top:44px;background:linear-gradient(135deg,#d3aa5e,#9a7736);color:#1b1309;border:0;
+    border-radius:15px;padding:19px 52px;font-size:17px;font-weight:800;letter-spacing:.09em;
+    cursor:pointer;box-shadow:0 14px 34px rgba(140,108,52,.42);text-decoration:none;
+    display:inline-flex;align-items:center;gap:10px;transition:transform .28s ease,box-shadow .28s ease}
+  .open:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(140,108,52,.55)}
+  .open:active{transform:translateY(0)}
+  .tip{font-size:12.5px;color:#d4c4a3;line-height:1.75;max-width:342px;margin-top:38px;text-align:left;
+    background:rgba(176,141,79,.075);border:1px solid rgba(176,141,79,.18);border-radius:16px;padding:19px 21px}
+  .tip b{color:#f3e9d6;font-weight:700}
   .tip-h{display:flex;align-items:center;gap:9px;color:#f3e9d6;font-weight:700;font-size:13.5px;
-    letter-spacing:.02em;margin-bottom:9px}
+    letter-spacing:.02em;margin-bottom:12px}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @media(prefers-reduced-motion:reduce){#landing,img.logo{animation:none}}
   .tip-h svg{width:19px;height:19px;color:#d9b878;flex:0 0 auto}
   .tip p{margin:0 0 10px;white-space:nowrap}
   .tip p:last-child{margin-bottom:0}
