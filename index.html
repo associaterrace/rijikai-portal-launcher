@@ -117,8 +117,10 @@
 
     document.getElementById('openBtn').addEventListener('click', function(e){ e.preventDefault(); openApp(); });
 
-    // インストール済み（ホーム画面アイコン起動）→ そのままアプリを埋め込み表示
-    if (standalone) { openApp(); }
+    // インストール済み（ホーム画面アイコン起動）or 直接/execから転送されて来た(?app=1)
+    // → そのままアプリを埋め込み表示（＝Googleの警告バーを出さない）
+    var auto = standalone || /[?&]app=1/.test(location.search);
+    if (auto) { openApp(); }
     // ブラウザ表示 → 入口ページ（ホーム追加の案内つき）。「開く」で埋め込み表示。
 
     if ('serviceWorker' in navigator) {
