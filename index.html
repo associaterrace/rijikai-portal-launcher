@@ -66,13 +66,9 @@
   @keyframes sp{to{transform:rotate(360deg)}}
   .hidden{display:none}
 
-  /* アプリを全画面iframeで埋め込む（Googleの警告バーを出さないため） */
-  #appFrame{position:fixed;inset:0;width:100%;height:100%;height:100dvh;border:0;background:#fff;display:none;z-index:10}
+  /* 「開く」タップ後の一瞬だけ出す遷移中ローディング */
   #loading{position:fixed;inset:0;display:none;align-items:center;justify-content:center;gap:10px;
     background:radial-gradient(120% 120% at 50% 18%,#3d2e20,#1c140e 70%);color:#f3e9d6;font-size:15px;z-index:20}
-  body.embed{padding:0;display:block}
-  body.embed #landing{display:none}
-  body.embed #appFrame{display:block}
 </style>
 </head>
 <body>
