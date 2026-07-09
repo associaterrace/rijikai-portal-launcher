@@ -95,7 +95,6 @@
   </div>
 
   <div id="loading"><span class="spin"></span> ひらいています…</div>
-  <iframe id="appFrame" title="理事会運営ポータル" allow="clipboard-read; clipboard-write; camera"></iframe>
 
 <script>
   (function(){
@@ -103,16 +102,14 @@
                   || window.navigator.standalone === true
                   || document.referrer.indexOf('android-app://') === 0;
 
-    var frame   = document.getElementById('appFrame');
     var loading = document.getElementById('loading');
 
+    // GAS(/exec) は X-Frame-Options: SAMEORIGIN を返すため iframe 埋め込みは不可
+    //（フレーム内だと net::ERR_BLOCKED_BY_RESPONSE ＝ 壊れたアイコンになる）。
+    // よって最上位ウィンドウでそのままアプリURLへ遷移する。
     function openApp(){
       loading.style.display = 'flex';
-      frame.src = APP_URL;
-      document.body.classList.add('embed');
-      frame.addEventListener('load', function(){ loading.style.display = 'none'; });
-      // 保険：一定時間で必ずローディングを消す
-      setTimeout(function(){ loading.style.display = 'none'; }, 6000);
+      location.replace(APP_URL);
     }
 
     document.getElementById('openBtn').addEventListener('click', function(e){ e.preventDefault(); openApp(); });
